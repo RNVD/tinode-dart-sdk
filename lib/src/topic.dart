@@ -245,6 +245,7 @@ class Topic {
 
     try {
       var response = await _tinodeService.publishMessage(message);
+<<<<<<< HEAD
       CtrlMessage? ctrl;
       if (response is CtrlMessage) {
         ctrl = response;
@@ -258,6 +259,14 @@ class Topic {
           message.setStatus(message_status.SENT);
         }
         routeData(message.asDataMessage(_authService.userId ?? '', seq));
+=======
+      //var ctrl = CtrlMessage.fromMessage(response);
+      var ctrl = response;
+      message.ts = ctrl.ts;
+      var seq = ctrl.params['seq'];
+      if (seq != null) {
+        message.setStatus(message_status.SENT);
+>>>>>>> thk_RNVD
       }
       return ctrl;
     } catch (e) {
@@ -710,8 +719,13 @@ class Topic {
   /// Process data message
   void routeData(DataMessage data) {
     if (data.content != null) {
-      if (touched!.isBefore(data.ts!)) {
-        touched = data.ts;
+      if (touched == null) {
+        touched=data.ts;
+      }
+      else{
+        if (touched!.isBefore(data.ts!)) {
+          touched = data.ts;
+        }
       }
     }
 

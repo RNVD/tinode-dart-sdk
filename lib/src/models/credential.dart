@@ -26,7 +26,11 @@ class Credential {
     );
   }
 
+<<<<<<< HEAD
   Map<String, dynamic> toJson() {
+=======
+    Map<String, dynamic> toJson() {
+>>>>>>> thk_RNVD
     return {
       'meth': meth,
       'val': val,
@@ -35,4 +39,8 @@ class Credential {
       'params': params,
     };
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> thk_RNVD
 }

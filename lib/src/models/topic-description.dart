@@ -58,7 +58,11 @@ class TopicDescription {
     this.touched,
   });
 
+<<<<<<< HEAD
   Map<String, dynamic> toJson() {
+=======
+    Map<String, dynamic> toJson() {
+>>>>>>> thk_RNVD
     return {
       'created': created?.toIso8601String(),
       'updated': updated?.toIso8601String(),
@@ -75,6 +79,10 @@ class TopicDescription {
     };
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> thk_RNVD
   /// Create a new instance from received message
   static TopicDescription fromMessage(Map<String, dynamic> msg) {
     return TopicDescription(
